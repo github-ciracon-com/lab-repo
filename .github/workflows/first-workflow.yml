@@ -20,7 +20,11 @@ jobs:
         run: cat swapi.html
 
       - name: echo secret
-        run: echo "The secret is ${{ secrets.DBPASSWORD }}"
+        env: 
+            SECRET: ${{ secrets.DBPASSWORD }}
+        run: echo $SECRET
 
       - name: echo variable
-        run: echo "The environment variable is $MYFATHER"
+        env:
+            ENV: ${{ env.MYFATHER }}
+        run: echo "The environment variable is $ENV"
