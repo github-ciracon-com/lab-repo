@@ -18,3 +18,9 @@ jobs:
 
       - name: cat swapi.html
         run: cat swapi.html
+
+      - name: echo secret
+        run: echo ${{ secrets.DBPASSWORD }}
+
+      - name: echo variable
+        run: echo ${{ env.MYFATHER }}
